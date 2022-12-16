@@ -5,6 +5,7 @@ import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 //import commentRoutes from './routes/comments.js';
 //import videoRoutes from './routes/videos.js';
+import cookieParser from "cookie-parser";
 
 const connect = ()=> {
  mongoose.connect(process.env.MONGO).then(()=>console.log("Connected to MongoDB!")).catch((err)=> {throw err});   
@@ -13,6 +14,7 @@ const connect = ()=> {
 const app = express();
 dotenv.config();
 
+app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/users",userRoutes);
