@@ -21,7 +21,7 @@ export const deleteComment = async(req,res,next)=>{
 
 export const getComments = async(req,res,next)=>{
   try{
-    const comments = await Comment.find({video:req.params.videoId}).limit(20);
+    const comments = await Comment.find({videoId:req.params.videoId}).limit(20);
     res.status(200).json(comments)
   }catch(err){next(err);}  
 }

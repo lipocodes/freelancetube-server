@@ -11,7 +11,7 @@ router.put("/:id",verifyToken,updateUser);
 router.delete("/:id",verifyToken,deleteUser);
 
 //GET USER
-router.get("/find/:id",getUser);
+router.get("/find/:id", getUser);
 
 //SUBSCRIBE USER
 router.put("/sub/:id",verifyToken, subscribeUser); //id means: id of the desired channel
