@@ -17,7 +17,7 @@ router.get("/find/:id", getUser);
 router.put("/sub/:id",verifyToken, subscribeUser); //id means: id of the desired channel
 
 //UNSUBSCRIBE USER
-router.put("/unsub/:id",unsubscribeUser);
+router.put("/unsub/:id",verifyToken,unsubscribeUser);
 
 //LIKE A VIDEO
 router.put("/like/:videoId",verifyToken,likeVideo);
